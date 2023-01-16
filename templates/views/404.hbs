@@ -1,0 +1,25 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>error</title>
+    <link rel="icon" href="/img/icon.png"/>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- In the above line, the path starts from slash, that means it would start from the root of web-server
+    and, for web-server the root woult be what we have set in app.use()and that was publicDirectorypath variable. 
+    We have set public folder as the root of out webserver and it will be entertaining html,css and js content 
+    to the client, client will execute that js in browser. Browsers does not have access to that machine's file
+    system. otherwise anyone could have made a website that could access to the files of your machine from the
+    browser by giving the absolute path. -->
+  </head>
+  <body>
+    <div class="main-content">
+       {{>header}}
+       {{errorMsg}}
+    </div>
+      
+       {{>footer}}
+  </body>
+</html>

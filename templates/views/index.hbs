@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="/img/icon.png"/>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- In the above line, the path starts from slash, that means it would start from the root of web-server
+    and, for web-server the root woult be what we have set in app.use()and that was publicDirectorypath variable. 
+    We have set public folder as the root of out webserver and it will be entertaining html,css and js content 
+    to the client, client will execute that js in browser. Browsers does not have access to that machine's file
+    system. otherwise anyone could have made a website that could access to the files of your machine from the
+    browser by giving the absolute path. -->
+  </head>
+  <body>
+    <div class="main-content">
+      {{>header}}
+      <form>
+        <input type="text" placeholder="location">
+        <button type="submit">search</button>
+      </form>
+      <p id="message-1"></p>
+      <p id="message-2"></p>
+      {{!-- <h1> This is dynamic {{title}}</h1> --}}
+      {{!-- <p>Created by {{name}}</p> --}}
+    </div>
+       
+       {{>footer}}
+
+    <script src="/js/app.js"></script>
+    {{!-- Always add the script tag at hte end of the html file. because, in the js, we usually try to select
+    items and add event listeners. if the js is rendered at the top, it will break things, how? js will try
+    to select elements if the html file that are not being rendered at that time. So an exception will be
+    thrown, like, cant read properties using addEvenetListener on null --}}
+  </body>
+</html>

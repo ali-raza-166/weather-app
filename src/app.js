@@ -1,9 +1,12 @@
 import express from "express";
 import path from "path";
 import hbs from "hbs";
+import dotenv from "dotenv";
 import { geocode } from "./utils/geocode.js";
 import { forecast } from "./utils/forecast.js";
 const app = express();
+dotenv.config();
+const port = process.env.PORT || 3000; //in case it is deployed to heroku, process.env.PORT will be the port on their OS where our application will be running to be accessed
 //nodemon only restarts on js file save, to restart nodemon on hbs file save, use command => nodemon app.js -e js,hbs
 //****************************************Defining paths for express config*****************************
 const __dirname = path.resolve();
@@ -135,6 +138,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server started on port 3000");
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
 });

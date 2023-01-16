@@ -1,7 +1,7 @@
 import request from "request";
 
 export const forecast = (lat, long, callback) => {
-  const url = `http://api.weatherstack.com/current?access_key=98199589f90d23c8e1ceeb8bfd58a99a&query=${lat},${long}`;
+  const url = `http://api.weatherstack.com/current?access_key=${process.env.API_KEY_WEATHER_STACK}&query=${lat},${long}`;
 
   request({ url: url, json: true }, (error, response) => {
     if (error) {
